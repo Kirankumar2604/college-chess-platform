@@ -1,0 +1,36 @@
+.DS_Store
+.env
+.env.local
+.env.*.local
+/node_modules/
+
+# React Router
+/.react-router/
+/build/
+/dist/
+/.vite/
+/.cache/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories
+.vscode/
+.idea/
+
+# Coverage / test results
+coverage/
+test-results/
+playwright-report/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# OS
+Thumbs.db
+
+# Parcel / other caches
+.parcel-cache/
