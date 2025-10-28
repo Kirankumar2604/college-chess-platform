@@ -3,6 +3,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import User from "./src/models/User.js"
+import authRoutes from "./src/routes/auth.js";
+
 
 dotenv.config();
 
@@ -15,8 +17,10 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.log("DB Error:", err));
 
 app.get("/", (req, res) => {
-  res.json({ status: "Backend OK" });
+  res.status(200).send('Server is running fine');
 });
+
+app.use("/api/auth", authRoutes);
 
 app.post("/api/users", async (req,res)=>{
     try {
@@ -42,5 +46,5 @@ app.post("/api/users", async (req,res)=>{
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server on ${PORT}`));
+const PORT = process.env.PORT || 5001;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
